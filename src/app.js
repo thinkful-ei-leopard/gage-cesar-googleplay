@@ -40,7 +40,9 @@ app.get('/apps', (req, res) => {
         return 0;
       });
     } else {
-      res.send('The sort method you picked is invalid. Please make sure it is either by \'rating\' or by \'app\'');
+      res
+        .status(400)
+        .send('The sort method you picked is invalid. Please make sure it is either by \'rating\' or by \'app\'');
     }
   }
   res.send(appArr);
